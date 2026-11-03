@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fashion Boutique</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff0f5;
+    color: #333;
+}
+
+/* Header with Multiple Backgrounds */
+
+header {
+    background:
+    linear-gradient(#880e4fcc, #880e4fcc),
+    url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80");
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+}
+
+nav {
+    background: #880e4f;
+    text-align: center;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd1dc;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    color: #c2185b;
+    border-left: 5px solid #e91e63;
+    padding-left: 10px;
+    margin-top: 35px;
+}
+
+/* 1. Rounded Corners */
+
+.rounded-box {
+    background: #f8bbd0;
+    border: 3px solid #c2185b;
+    border-radius: 15px 50px 30px 5px;
+    padding: 25px;
+    margin: 20px 0;
+}
+
+/* 2. Border Image */
+
+.border-img-box {
+    padding: 25px;
+    margin: 20px 0;
+    border: 25px solid transparent;
+
+    border-image:
+    url("https://www.w3schools.com/cssref/border.png")
+    30 round;
+
+    background: #fffdf5;
+    text-align: center;
+}
+
+/* 3. Multiple Backgrounds */
+
+#fashion {
+    height: 280px;
+    border: 3px solid #c2185b;
+    border-radius: 20px;
+
+    background-image:
+    url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=80"),
+    url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80");
+
+    background-position: right bottom, center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 250px, cover;
+
+    color: white;
+    padding: 30px;
+}
+
+/* 4. Background Size */
+
+#dress {
+    min-height: 220px;
+    padding: 30px;
+    border: 2px solid #c2185b;
+    border-radius: 15px;
+
+    background:
+    url("https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=500&q=80");
+
+    background-size: 180px 140px;
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-color: #fce4ec;
+}
+
+/* 5. Pseudo Classes */
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid #aaa;
+    border-radius: 8px;
+}
+
+input:required, select:required {
+    border: 2px solid blue;
+    background: lightyellow;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border: 3px solid #e91e63;
+    background: #fff0f5;
+}
+
+input[type=email]:invalid {
+    color: red;
+}
+
+input[type=email]:valid {
+    color: blue;
+}
+
+/* 6. Adjacent Sibling Combinator */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+}
+
+td, th {
+    border: 1px solid #777;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background: #880e4f;
+    color: white;
+}
+
+.itemName {
+    font-weight: bold;
+    color: #c2185b;
+    cursor: pointer;
+}
+
+.itemImg {
+    opacity: 0.2;
+    transition: 0.4s;
+}
+
+.itemName:hover + .itemImg {
+    opacity: 1;
+}
+
+.itemImg img {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* 7. nth-child() */
+
+#products tr:nth-child(odd) {
+    background: #fce4ec;
+}
+
+#products tr:nth-child(even) {
+    background: #f8bbd0;
+}
+
+#products tr:hover {
+    background: #ffccbc;
+}
+
+button {
+    padding: 12px 25px;
+    background: #c2185b;
+    color: white;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #880e4f;
+}
+
+footer {
+    background: #880e4f;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+
+@media(max-width: 768px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px;
+    }
+
+    #fashion {
+        height: 350px;
+    }
+
+    #dress {
+        background-size: 120px 100px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>FASHION BOUTIQUE</h1>
+    <p>Discover Your Style • Explore Fashion • Look Beautiful</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#fashion">Collection</a>
+    <a href="#join">Register</a>
+</nav>
+
+<div class="container" id="home">
+
+    <!-- 1. Rounded Corners -->
+
+    <h2>1. Rounded Corners</h2>
+
+    <div class="rounded-box">
+        <h3>Welcome to Fashion Boutique</h3>
+        <p>
+            Fashion Boutique provides stylish clothing,
+            modern designs and fashionable outfits.
+        </p>
+        <p>
+            Explore our collections and discover your
+            unique fashion style.
+        </p>
+    </div>
+
+    <!-- 2. Border Image -->
+
+    <h2>2. Border Image</h2>
+
+    <div class="border-img-box" id="about">
+        <h3>Style That Defines You</h3>
+        <p>
+            Fashion is a way to express your personality.
+            Choose the best outfits and create your own style.
+        </p>
+    </div>
+
+    <!-- 3. Multiple Backgrounds -->
+
+    <h2>3. Multiple Backgrounds</h2>
+
+    <div id="fashion">
+        <h3>Explore Our Fashion Collection</h3>
+        <p>
+            Discover trendy outfits and beautiful
+            collections for every occasion.
+        </p>
+    </div>
+
+    <!-- 4. Background Size -->
+
+    <h2>4. Background Size</h2>
+
+    <div id="dress">
+        <h3>Elegant Dress Collection</h3>
+        <p>
+            Explore elegant dresses with modern
+            designs and beautiful styles.
+        </p>
+    </div>
+
+    <!-- 5. Pseudo Classes -->
+
+    <h2>5. Pseudo Classes</h2>
+
+    <form id="join">
+
+        <h3>Customer Registration</h3>
+
+        <label>Name *</label>
+        <input type="text"
+               required
+               placeholder="Enter your name">
+
+        <label>Email *</label>
+        <input type="email"
+               required
+               placeholder="name@example.com">
+
+        <label>Mobile Number *</label>
+        <input type="tel"
+               required
+               pattern="[0-9]{10}"
+               placeholder="Enter 10 digit mobile number">
+
+        <label>Fashion Interest *</label>
+
+        <select required>
+            <option value="">Select an interest</option>
+            <option>Casual Wear</option>
+            <option>Traditional Wear</option>
+            <option>Party Wear</option>
+            <option>Western Wear</option>
+        </select>
+
+        <label>Message</label>
+        <textarea placeholder="Write your message..."></textarea>
+
+        <button type="submit">Register Now</button>
+
+    </form>
+
+    <!-- 6. Adjacent Sibling Selector -->
+
+    <h2>6. Adjacent Sibling Selector</h2>
+
+    <p>Hover over a product name to reveal its image.</p>
+
+    <table>
+
+        <tr>
+            <th>Product</th>
+            <th>Image</th>
+            <th>Price</th>
+        </tr>
+
+        <tr>
+            <td class="itemName">Kurti</td>
+            <td class="itemImg">
+                <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e1?auto=format&fit=crop&w=300&q=80" alt="Kurti">
+            </td>
+            <td>₹799</td>
+        </tr>
+
+        <tr>
+            <td class="itemName">Dress</td>
+            <td class="itemImg">
+                <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=300&q=80" alt="Dress">
+            </td>
+            <td>₹1499</td>
+        </tr>
+
+        <tr>
+            <td class="itemName">Fashion Wear</td>
+            <td class="itemImg">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=300&q=80" alt="Fashion wear">
+            </td>
+            <td>₹1999</td>
+        </tr>
+
+    </table>
+
+    <!-- 7. nth-child() -->
+
+    <h2>7. nth-child()</h2>
+
+    <p>
+        The table uses nth-child(odd) and nth-child(even)
+        to create alternate row colors.
+        Hover over a row to see the effect.
+    </p>
+
+    <table id="products">
+
+        <tr>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+        </tr>
+
+        <tr>
+            <td>Kurti</td>
+            <td>Traditional Wear</td>
+            <td>₹799</td>
+        </tr>
+
+        <tr>
+            <td>Jeans</td>
+            <td>Casual Wear</td>
+            <td>₹999</td>
+        </tr>
+
+        <tr>
+            <td>Party Dress</td>
+            <td>Party Wear</td>
+            <td>₹1499</td>
+        </tr>
+
+        <tr>
+            <td>Shirt</td>
+            <td>Formal Wear</td>
+            <td>₹899</td>
+        </tr>
+
+        <tr>
+            <td>Gown</td>
+            <td>Western Wear</td>
+            <td>₹1999</td>
+        </tr>
+
+        <tr>
+            <td>Saree</td>
+            <td>Traditional Wear</td>
+            <td>₹2499</td>
+        </tr>
+
+    </table>
+
+</div>
+
+<footer>
+    <h3>Fashion Boutique</h3>
+    <p>Style Yourself. Be Confident.</p>
+    <p>© 2026 Fashion Boutique</p>
+</footer>
+
+</body>
+</html>
